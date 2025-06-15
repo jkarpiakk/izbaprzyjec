@@ -1,10 +1,8 @@
 import Navbar from './Navbar';
-export default function Layout({children}){
+export default function Layout({ children }) {
   return <>
-    <Navbar/>
+    <Navbar />
     <main className="min-h-screen p-4">{children}</main>
-    <footer className="w-full bg-gray-100 text-center text-sm p-4 text-gray-600">
-      ©2025 Izba Przyjęć • <a href="/regulamin" className="underline">Regulamin</a>
-    </footer>
+    <footer className="bg-gray-100 text-center text-sm p-4">©2025 Izba Przyjęć</footer>
   </>;
 }

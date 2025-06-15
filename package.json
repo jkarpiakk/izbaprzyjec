@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "set-admin": "node scripts/setAdmin.js"
   },
   "dependencies": {
     "next": "^15.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "firebase": "^9.22.1"
+    "firebase": "^9.22.1",
+    "firebase-admin": "^11.6.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3",

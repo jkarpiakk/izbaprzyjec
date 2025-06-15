@@ -1,6 +1,3 @@
-# Izba Przyjęć
+# Izba Przyjęć z panelem admina
 
-## Deploy on Vercel
-1. Import project
-2. Set env vars
-3. Deploy
+Instrukcja zawarta w kodzie.
