@@ -6,7 +6,7 @@
 3. Deploy – done!
 
 ## GitHub Pages
-1. next.config.js -> output: 'export'.
-2. npm install && npm run build && npm run export.
-3. Copy out/ to gh-pages/docs.
-4. Enable Pages.
+1. next.config.js -> output: 'export'
+2. npm install && npm run build && npm run export
+3. copy out/ to gh-pages/docs
+4. enable Pages
