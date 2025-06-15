@@ -3,9 +3,14 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { firebaseConfig } from './firebaseConfig';
 
-const app = !getApps().length
-  ? initializeApp(firebaseConfig)
-  : getApps()[0];
+let app, auth, db;
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+if (typeof window !== 'undefined') {
+  app = !getApps().length
+    ? initializeApp(firebaseConfig)
+    : getApps()[0];
+  auth = getAuth(app);
+  db = getFirestore(app);
+}
+
+export { auth, db };
