@@ -1,10 +1,14 @@
-import '../styles/globals.css';
-import { AuthProvider } from '../components/AuthProvider';
+import '../styles/globals.css'
+import Layout from '../components/layout/Layout'
+import Header from '../components/layout/Header'
 
-export default function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
-    <AuthProvider>
+    <Layout>
+      <Header user={pageProps.user} />
       <Component {...pageProps} />
-    </AuthProvider>
-  );
+    </Layout>
+  )
 }
+
+export default MyApp
