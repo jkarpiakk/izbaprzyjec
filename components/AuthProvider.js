@@ -1,12 +1,9 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase';
-
+const { auth } = require('../firebase');
 const AuthContext = createContext({ user: null, isAdmin: false });
-
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
-
   useEffect(() => {
     if (!auth) return;
     const unsubscribe = auth.onAuthStateChanged(async (u) => {
@@ -14,20 +11,12 @@ export function AuthProvider({ children }) {
       if (u) {
         const tok = await u.getIdTokenResult();
         setIsAdmin(!!tok.claims.admin);
-      } else {
-        setIsAdmin(false);
-      }
+      } else setIsAdmin(false);
     });
     return unsubscribe;
   }, []);
-
-  return (
-    <AuthContext.Provider value={{ user, isAdmin }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ user, isAdmin }}>{children}</AuthContext.Provider>;
 }
-
 export function useAuth() {
   return useContext(AuthContext);
 }
