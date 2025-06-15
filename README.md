@@ -1,29 +1,34 @@
-# Izba Przyjęć z panelem admina
+# Izba Przyjęć (Next.js + Firebase)
 
-## Domyślne konto administratora
-- **Email:** admin@izbaprzyjec.eu
-- **Hasło:** SecurePass123!
+## Konfiguracja
 
-## Instalacja
-1. `npm install`
-2. Skonfiguruj `.env.local`:
-   ```
-   NEXT_PUBLIC_FIREBASE_API_KEY=...
-   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-   NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
-   NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
-   NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-   NEXT_PUBLIC_FIREBASE_APP_ID=...
-   ```
-3. Wgraj `scripts/serviceAccountKey.json` z Firebase Console.
+1. Utwórz plik `.env.local` z:
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSy… 
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=izbaprzyjec-9266b.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=izbaprzyjec-9266b
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=izbaprzyjec-9266b.appspot.com
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123456789012
+NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789012:web:abcdef123456
+```
 
-## Nadanie roli administratora
-1. Dodaj użytkownika w Firebase Auth (admin@izbaprzyjec.eu / SecurePass123!).
-2. Skopiuj UID z konsoli Firebase.
-3. W `scripts/setAdmin.js` w polu `const uid = '<WPROWADŹ_UID_ADMINA>';` wklej ten UID.
-4. Uruchom: `npm run set-admin`.
+2. Wgraj w `scripts/serviceAccountKey.json` swój klucz serwisowy Firebase.
 
-## Uruchomienie
-- `npm run dev` – uruchamia serwer deweloperski.
-- `npm run build && npm start` – produkcyjny build.
-- `/admin` – panel moderacji historii, dostępny tylko dla admina.
+3. Dodaj konto admin (`admin@izbaprzyjec.eu`, hasło `SecurePass123!`) w Firebase Auth.
+
+4. Uzyskaj UID i wklej w `scripts/setAdmin.js` w miejsce `<ADMIN_UID>`, następnie:
+```
+npm install
+npm run set-admin
+```
+
+5. Uruchom:
+```
+npm run dev
+```
+
+## Deploy
+
+- Wrzuć na GitHub, skonfiguruj zmienne w Vercel.
+- Deployuj normalnie – powinno działać.
+
