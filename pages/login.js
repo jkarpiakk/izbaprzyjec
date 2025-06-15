@@ -1,3 +1,6 @@
+// pages/login.js
+export const dynamic = 'force-dynamic';
+
 import { useState } from 'react';
 const { auth } = require('../firebase');
 const { signInWithEmailAndPassword } = require('firebase/auth');
