@@ -1,11 +1,13 @@
-let auth = null, db = null;
+// firebase.js
+import { initializeApp, getApps } from 'firebase/app';
+import { getAuth }              from 'firebase/auth';
+import { getFirestore }         from 'firebase/firestore';
+import { firebaseConfig }       from './firebaseConfig';
+
+let app, auth, db;
 if (typeof window !== 'undefined') {
-  const { initializeApp, getApps } = require('firebase/app');
-  const { getAuth } = require('firebase/auth');
-  const { getFirestore } = require('firebase/firestore');
-  const { firebaseConfig } = require('./firebaseConfig');
-  const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
+  app  = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
   auth = getAuth(app);
-  db = getFirestore(app);
+  db   = getFirestore(app);
 }
-module.exports = { auth, db };
+export { auth, db };
