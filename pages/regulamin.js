@@ -9,7 +9,6 @@ export default function Regulamin() {
         <li>...</li>
         <li>...</li>
       </ol>
-      {/* Pełny regulamin tutaj */}
     </Layout>
   );
 }
