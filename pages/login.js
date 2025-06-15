@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 export default function Login() {
   return (
     <Layout>
-      <section className="min-h-screen flex flex-col items-center justify-center">
+      <section className="min-h-screen flex flex-col items-center justify-center p-6">
         <img src="/logo.png" alt="Izba Przyjęć" className="w-32 mb-6" />
         <h2 className="text-2xl font-semibold mb-2">Logowanie</h2>
         <p className="text-center text-gray-600 mb-6">
