@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Izba Przyjęć — Feed</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F7F8FA;--surface:#fff;--primary:#2E8B57;--accent:#1E88E5;--text:#111827;--muted:#6B7280;--radius:12px;--shadow:0 8px 20px rgba(17,24,39,0.06)}
+  *{box-sizing:border-box}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);margin:0;padding:20px}
+  .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:20px;align-items:start}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+  .leftcol{position:sticky;top:20px}
+  .card{background:var(--surface);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .filters{display:flex;gap:8px;flex-wrap:wrap}
+  .tag{padding:8px 12px;border-radius:999px;background:#EEF2F7;color:var(--accent);font-weight:600;font-size:13px}
+  .story{display:grid;grid-template-columns:48px 1fr;gap:12px;padding:14px;border-radius:10px;background:var(--surface);box-shadow:0 4px 12px rgba(17,24,39,0.04);margin-bottom:12px}
+  .avatar{width:48px;height:48px;border-radius:999px;background:#FFF3F0;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .meta{color:var(--muted);font-size:13px}
+  .content{font-size:15px;color:var(--text)}
+  .reactions{display:flex;gap:8px;margin-top:10px}
+  .reaction{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#F3F4F6;font-weight:600;font-size:13px;cursor:pointer}
+  .load-more{display:block;width:100%;padding:12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--primary),#3CB371);color:#fff;font-weight:700}
+  nav.topbar{background:transparent;display:flex;align-items:center;gap:12px}
+  .nav-links{display:flex;gap:12px;align-items:center}
+  .btn-primary{background:var(--primary);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
+  @media (max-width:900px){.wrap{grid-template-columns:1fr;padding:0 16px}}
+</style>
+</head>
+<body>
+  <div style="max-width:1100px;margin:0 auto">
+    <header style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div style="font-weight:700;color:var(--primary)">Izba Przyjęć</div>
+        <div style="color:var(--muted)">Anonimowe, zweryfikowane historie</div>
+      </div>
+      <div class="nav-links">
+        <button class="btn-primary">Dodaj historię</button>
+        <div style="padding:8px 12px;border-radius:8px;background:#FFFFFF;border:1px solid #E5E7EB">Menu</div>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <aside class="leftcol">
+        <div class="card" style="margin-bottom:12px">
+          <div style="font-weight:700;margin-bottom:8px">Filtry</div>
+          <div class="filters">
+            <div class="tag">Specjalizacja</div>
+            <div class="tag">Miejsce</div>
+            <div class="tag">Typ relacji</div>
+          </div>
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">Sortowanie:
+            <select style="margin-left:8px;padding:6px;border-radius:8px;border:1px solid #E5E7EB">
+              <option>Najnowsze</option>
+              <option>Najlepsze</option>
+            </select>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700;margin-bottom:8px">Dołączenie</div>
+          <div style="font-size:13px;color:var(--muted)">Po rejestracji konto musi zostać zweryfikowane ręcznie.</div>
+        </div>
+      </aside>
+
+      <main>
+        <!-- 5 przykładowych kart -->
+        <article class="story card">
+          <div><div class="avatar">lek</div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">lek. Anonimowy</div>
+                <div class="meta">SOR · 3 godz. temu · osobiście</div>
+              </div>
+              <div><span style="padding:6px 10px;border-radius:999px;background:#EEF2F7;color:var(--accent)">Anestezjologia</span></div>
+            </div>
+            <p class="content">Pacjent przyniósł ze sobą paczkę… <a href="/story/1" style="color:var(--accent)">Czytaj więcej</a></p>
+            <div class="reactions">
+              <button class="reaction">😄 124</button>
+              <button class="reaction">😲 30</button>
+              <button class="reaction">🤦 8</button>
+              <button class="reaction">💬 12</button>
+              <button class="reaction" style="background:transparent;border:1px solid #FCE8E8;color:#E53935">Zgłoś</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="story card">
+          <div><div class="avatar" style="background:linear-gradient(180deg,#E6F4EA,#fff)">pn</div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">pielęgniarka_2741</div>
+                <div class="meta">Oddział · wczoraj · z drugiej ręki</div>
+              </div>
+              <div><span style="padding:6px 10px;border-radius:999px;background:#FFF3E0;color:#E65100">Pediatria</span></div>
+            </div>
+            <p class="content">Pamiętasz jak pacjent… <a href="/story/2" style="color:var(--accent)">Czytaj więcej</a></p>
+            <div class="reactions">
+              <button class="reaction">😄 20</button>
+              <button class="reaction">😲 5</button>
+              <button class="reaction">🤦 3</button>
+              <button class="reaction">💬 2</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="story card">
+          <div><div class="avatar" style="background:linear-gradient(180deg,#E3F2FD,#fff)">rt</div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">ratownik_832</div>
+                <div class="meta">Przychodnia POZ · 2 dni temu · osobiście</div>
+              </div>
+              <div><span style="padding:6px 10px;border-radius:999px;background:#EEF2F7;color:var(--accent)">Ratownictwo</span></div>
+            </div>
+            <p class="content">Kiedy karetkę zaparkowaliśmy… <a href="/story/3" style="color:var(--accent)">Czytaj więcej</a></p>
+            <div class="reactions">
+              <button class="reaction">😄 45</button>
+              <button class="reaction">😲 2</button>
+              <button class="reaction">🤦 4</button>
+              <button class="reaction">💬 9</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="story card">
+          <div><div class="avatar">lek</div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">lekarka_1032</div>
+                <div class="meta">SOR · 1 tydz. temu · osobiście</div>
+              </div>
+              <div><span style="padding:6px 10px;border-radius:999px;background:#EEF2F7;color:var(--accent)">Chirurgia</span></div>
+            </div>
+            <p class="content">Pacjent upomniał się o… <a href="/story/4" style="color:var(--accent)">Czytaj więcej</a></p>
+            <div class="reactions">
+              <button class="reaction">😄 8</button>
+              <button class="reaction">😲 0</button>
+              <button class="reaction">🤦 1</button>
+              <button class="reaction">💬 0</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="story card">
+          <div><div class="avatar">pn</div></div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">pielęgniarka_998</div>
+                <div class="meta">Oddział · 3 mies. temu · z drugiej ręki</div>
+              </div>
+              <div><span style="padding:6px 10px;border-radius:999px;background:#E6F4EA;color:var(--primary)">Onkologia</span></div>
+            </div>
+            <p class="content">Jedna z historii, która nas wszystkich rozbawiła… <a href="/story/5" style="color:var(--accent)">Czytaj więcej</a></p>
+            <div class="reactions">
+              <button class="reaction">😄 199</button>
+              <button class="reaction">😲 43</button>
+              <button class="reaction">🤦 12</button>
+              <button class="reaction">💬 34</button>
+            </div>
+          </div>
+        </article>
+
+        <div style="text-align:center;margin-top:12px">
+          <button class="load-more">Załaduj więcej</button>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>

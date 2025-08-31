@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Izba Przyjęć — Dodaj historię</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F7F8FA;--surface:#fff;--primary:#2E8B57;--accent:#1E88E5;--text:#111827;--muted:#6B7280;--radius:12px;--shadow:0 8px 20px rgba(17,24,39,0.06)}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);margin:0;padding:20px}
+  .wrap{max-width:800px;margin:0 auto}
+  .card{background:var(--surface);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  label{display:block;margin-top:12px;font-weight:600}
+  textarea{width:100%;min-height:160px;padding:12px;border-radius:10px;border:1px solid #E5E7EB;font-size:15px}
+  .row{display:flex;gap:8px}
+  .small{flex:1;padding:10px;border-radius:8px;border:1px solid #E5E7EB}
+  .btn{background:var(--primary);color:#fff;padding:12px;border-radius:10px;border:0;font-weight:700;cursor:pointer;margin-top:12px}
+  .infobox{background:#FFF8E1;padding:12px;border-radius:10px;border:1px solid #FFECB3;color:#6B4D02;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+      <div style="font-weight:700;color:var(--primary)">Dodaj historię</div>
+      <a href="/" style="color:var(--accent)">Powrót</a>
+    </div>
+
+    <section class="card">
+      <div class="infobox">
+        Przypominamy: nie ujawniaj danych osobowych pacjentów ani identyfikowalnych szczegółów placówek. Zaznacz poniższy checkbox przed wysłaniem.
+      </div>
+
+      <label for="body">Treść historii</label>
+      <textarea id="body" placeholder="Opisz wydarzenie..."></textarea>
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div style="flex:1">
+          <label>Specjalizacja</label>
+          <select class="small">
+            <option>Anestezjologia</option>
+            <option>Chirurgia</option>
+            <option>Pediatria</option>
+            <!-- pełna lista do uzupełnienia -->
+          </select>
+        </div>
+        <div style="width:220px">
+          <label>Miejsce</label>
+          <select class="small">
+            <option>SOR / Izba przyjęć</option>
+            <option>Oddział szpitalny</option>
+            <option>Przychodnia POZ</option>
+          </select>
+        </div>
+        <div style="width:180px">
+          <label>Typ relacji</label>
+          <select class="small">
+            <option>osobiście</option>
+            <option>z drugiej ręki</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <label style="display:flex;align-items:center;gap:8px"><input type="checkbox" /> Nie ujawniam danych pacjentów/placówki</label>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+        <div style="font-size:13px;color:var(--muted)">Po wysłaniu historia trafi do moderacji.</div>
+        <button class="btn">Wyślij do moderacji</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

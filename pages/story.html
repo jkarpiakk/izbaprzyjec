@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Izba Przyjęć — Historia</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F7F8FA;--surface:#fff;--primary:#2E8B57;--accent:#1E88E5;--text:#111827;--muted:#6B7280;--radius:12px;--shadow:0 8px 20px rgba(17,24,39,0.06)}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);margin:0;padding:20px}
+  .wrap{max-width:800px;margin:0 auto;display:grid;gap:16px}
+  .card{background:var(--surface);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .meta{color:var(--muted);font-size:13px}
+  .avatar{width:56px;height:56px;border-radius:999px;background:#FFF3F0;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .reactions{display:flex;gap:8px;margin-top:14px}
+  .reaction{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#F3F4F6;font-weight:600;font-size:14px;cursor:pointer}
+  .comments{display:grid;gap:10px;margin-top:12px}
+  .comment{background:#FBFBFD;padding:12px;border-radius:10px;border:1px solid #F1F5F9}
+  .input-comment{display:flex;gap:8px;margin-top:12px}
+  .input-comment input{flex:1;padding:10px;border-radius:10px;border:1px solid #E5E7EB}
+  .btn{background:var(--primary);color:#fff;padding:10px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-weight:700;color:var(--primary)">Izba Przyjęć</div>
+      <div><a href="/" style="color:var(--accent)">Powrót do feedu</a></div>
+    </div>
+
+    <article class="card">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="avatar">lek</div>
+        <div>
+          <div style="font-weight:700">lek. Anonimowy</div>
+          <div class="meta">SOR · 3 godz. temu · osobiście</div>
+        </div>
+        <div style="margin-left:auto;color:var(--muted)">tagi: <span style="font-weight:700">Anestezjologia</span></div>
+      </div>
+      <div style="margin-top:12px;font-size:16px;line-height:1.6">
+        Pełna treść historii: pacjent przyniósł ze sobą paczkę z niespodzianką — okazało się, że to… (tu rozpisana zabawna sytuacja, bez danych osobowych).
+      </div>
+      <div class="reactions">
+        <button class="reaction">😄 124</button>
+        <button class="reaction">😲 30</button>
+        <button class="reaction">🤦 8</button>
+        <button class="reaction" style="background:transparent;border:1px solid #FCE8E8;color:#E53935">Zgłoś</button>
+      </div>
+    </article>
+
+    <section class="card">
+      <div style="font-weight:700;margin-bottom:8px">Komentarze</div>
+      <div class="comments">
+        <div class="comment"><div style="font-weight:700">pielęgniarka_2741</div><div style="color:var(--muted);font-size:13px">2 godz. temu</div><div style="margin-top:6px">Ha! U mnie też kiedyś podobnie — i jeszcze...</div></div>
+        <div class="comment"><div style="font-weight:700">ratownik_832</div><div style="color:var(--muted);font-size:13px">1 godz. temu</div><div style="margin-top:6px">Świetne — dzięki za uśmiech przed zmianą :)</div></div>
+      </div>
+
+      <div class="input-comment">
+        <input placeholder="Dodaj anonimowy komentarz..." aria-label="Dodaj komentarz" />
+        <button class="btn">Wyślij</button>
+      </div>
+      <div style="margin-top:8px;font-size:13px;color:var(--muted)">Komentarze są anonimowe — widoczna tylko Twoja rola + numer.</div>
+    </section>
+  </div>
+</body>
+</html>

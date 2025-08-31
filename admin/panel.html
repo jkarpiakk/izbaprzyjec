@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Izba Przyjęć — Panel admina</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F7F8FA;--surface:#fff;--primary:#2E8B57;--danger:#E53935;--text:#111827;--muted:#6B7280;--radius:12px;--shadow:0 8px 20px rgba(17,24,39,0.06)}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);margin:0;padding:20px}
+  .wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:20px}
+  .card{background:var(--surface);padding:16px;border-radius:var(--radius);box-shadow:var(--shadow)}
+  .list{display:grid;gap:10px;margin-top:10px}
+  .item{display:flex;justify-content:space-between;gap:12px;padding:10px;border-radius:8px;border:1px solid #EEF2F7;background:#fff}
+  .actions{display:flex;gap:8px}
+  .btn{padding:8px 10px;border-radius:8px;border:0;font-weight:700;cursor:pointer}
+  .btn-accept{background:var(--primary);color:#fff}
+  .btn-reject{background:#F3F4F6}
+  .btn-danger{background:var(--danger);color:#fff}
+</style>
+</head>
+<body>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+    <div style="font-weight:700;color:var(--primary)">Panel moderatora</div>
+    <div style="color:var(--muted)">Szybkie akcje: weryfikacja kont, akceptacja historii, zgłoszenia</div>
+  </div>
+
+  <div class="wrap">
+    <main>
+      <div class="card">
+        <div style="font-weight:700">Historie do akceptacji</div>
+        <div class="list">
+          <div class="item">
+            <div>
+              <div style="font-weight:700">leik. Anonimowy</div>
+              <div style="color:var(--muted);font-size:13px">SOR · osobiście</div>
+              <div style="margin-top:6px;color:var(--muted)">Pełna treść (krótkie streszczenie)...</div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-accept">Akceptuj</button>
+              <button class="btn btn-reject">Odrzuć</button>
+            </div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div style="font-weight:700">pielęgniarka_2741</div>
+              <div style="color:var(--muted);font-size:13px">Oddział · z drugiej ręki</div>
+              <div style="margin-top:6px;color:var(--muted)">Treść... </div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-accept">Akceptuj</button>
+              <button class="btn btn-reject">Odrzuć</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div style="font-weight:700">Zgłoszenia naruszeń</div>
+        <div class="list">
+          <div class="item">
+            <div>
+              <div style="font-weight:700">Zgłoszenie #512</div>
+              <div style="color:var(--muted);font-size:13px">Powód: dane osobowe</div>
+            </div>
+            <div class="actions">
+              <button class="btn" style="background:#F3F4F6">Ukryj historię</button>
+              <button class="btn btn-danger">Usuń konto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside>
+      <div class="card">
+        <div style="font-weight:700">Konta do weryfikacji</div>
+        <div class="list">
+          <div class="item">
+            <div>
+              <div style="font-weight:700">nowy_uzytkownik@example.com</div>
+              <div style="color:var(--muted);font-size:13px">Zawód: Lekarz</div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-accept">Zweryfikuj</button>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <div style="font-weight:700">dr.test@example.com</div>
+              <div style="color:var(--muted);font-size:13px">Zawód: Pielęgniarka</div>
+            </div>
+            <div class="actions">
+              <button class="btn btn-accept">Zweryfikuj</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <div style="font-weight:700">Statystyki moderacji</div>
+        <div style="margin-top:8px;color:var(--muted);font-size:13px">
+          - Historie w kolejce: 8<br/>
+          - Zgłoszenia: 2<br/>
+          - Ostatnia weryfikacja: 2 godziny temu
+        </div>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>

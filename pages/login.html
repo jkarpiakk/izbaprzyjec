@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Izba Przyjęć — Logowanie</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F8FA;--surface:#fff;--primary:#2E8B57;--accent:#1E88E5;--text:#111827;--muted:#6B7280;
+    --radius:12px;--shadow:0 10px 30px rgba(17,24,39,0.06);
+  }
+  *{box-sizing:border-box}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);margin:0;padding:0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+  .frame{width:100%;max-width:960px;padding:24px;display:grid;grid-template-columns:1fr 420px;gap:24px}
+  .left{padding:32px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{font-weight:700;color:var(--primary);font-size:20px}
+  .hero{margin-top:24px;background:var(--surface);padding:28px;border-radius:12px;box-shadow:var(--shadow)}
+  .hero h1{margin:0 0 8px 0;font-size:24px}
+  .hero p{margin:0;color:var(--muted)}
+  .card{background:var(--surface);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+  form{display:grid;gap:12px}
+  input{padding:12px;border-radius:8px;border:1px solid #E5E7EB;font-size:15px}
+  .btn{background:var(--primary);color:white;padding:12px;border-radius:8px;border:0;font-weight:700;cursor:pointer}
+  .muted{font-size:13px;color:var(--muted)}
+  @media (max-width:900px){
+    .frame{grid-template-columns:1fr;padding:16px}
+    .left{order:2}
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <div class="left">
+      <div class="brand"><div class="logo">Izba Przyjęć</div></div>
+      <div class="hero">
+        <h1>Podziel się historią ze swojej izby przyjęć</h1>
+        <p>Bezpieczna, anonimowa przestrzeń tylko dla zweryfikowanych medyków. Humor z szacunkiem — niczego nie ujawniamy.</p>
+      </div>
+      <div style="margin-top:16px;font-size:13px;color:var(--muted)">
+        <strong>Nie masz konta?</strong> <a href="/register" style="color:var(--accent)">Zarejestruj się</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <form>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <div style="font-weight:700">Logowanie</div>
+          <a href="/terms" style="color:var(--muted);font-size:13px">Regulamin</a>
+        </div>
+        <input type="email" placeholder="E‑mail" aria-label="E‑mail" />
+        <input type="password" placeholder="Hasło" aria-label="Hasło" />
+        <button class="btn" type="button">Zaloguj</button>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div class="muted"><input type="checkbox" /> Zapamiętaj mnie</div>
+          <a href="#" style="color:var(--accent);font-weight:600">Nie pamiętam hasła</a>
+        </div>
+      </form>
+      <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+        Po rejestracji Twoje konto przejdzie ręczną weryfikację — do czasu akceptacji zobaczysz komunikat "konto oczekuje na weryfikację".
+      </div>
+    </div>
+  </div>
+</body>
+</html>
