@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Izba Przyjęć — Prototyp</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <a href="./index.html"><img src="./assets/logo.svg" alt="Izba Przyjęć" class="logo"></a>
+    </div>
+    <nav class="nav">
+      <a href="./index.html">Feed</a>
+      <a href="./login.html">Zaloguj</a>
+      <a href="./register.html">Zarejestruj</a>
+      <a href="./submit.html">Dodaj historię</a>
+      <a href="./admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <aside class="filters card">
+      <h3>Filtry</h3>
+      <div class="chips">
+        <button class="chip" data-place="">Wszystkie</button>
+        <button class="chip" data-place="SOR">SOR</button>
+        <button class="chip" data-place="Oddział">Oddział</button>
+        <button class="chip" data-place="POZ">POZ</button>
+      </div>
+      <div class="muted" style="margin-top:12px">
+        Sortuj:
+        <select id="sort" onchange="applySort()">
+          <option value="new">Najnowsze</option>
+          <option value="top">Najlepsze</option>
+        </select>
+      </div>
+    </aside>
+
+    <section class="feed">
+      <div class="toolbar">
+        <button class="btn primary" onclick="location.href='./submit.html'">Dodaj historię</button>
+        <div class="muted">Status konta: <span id="acctStatus">gość</span></div>
+      </div>
+
+      <div id="stories" class="stories">
+        <!-- wypełnione przez JS -->
+      </div>
+
+      <div style="text-align:center;margin-top:12px">
+        <button class="btn loadmore" onclick="loadMore()">Załaduj więcej</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>Anonimowe, zweryfikowane historie medyków — humor z szacunkiem.</div>
+    <div class="muted">Prototyp klikalny — symulacja w przeglądarce (localStorage).</div>
+  </footer>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
